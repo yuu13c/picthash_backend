@@ -1,10 +1,12 @@
 import os, io
 import urllib.request
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 from PIL import Image
 import imagehash
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/digest', methods=['POST'])
 def digest():
